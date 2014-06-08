@@ -4,7 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+    <meta name="description" content="{{ site.description }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+
+</head>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -15,13 +23,116 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- Vegas -->
+    <link rel="stylesheet" href="/css/jquery.vegas.min.css">
+
+    <!-- Owl -->
+    <link rel="stylesheet" href="/css/owl.carousel.css">
+    <!-- Default Theme -->
+    <!-- <link rel="stylesheet" href="owl-carousel/owl.theme.css"> -->
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/css/arantxa.css">
   </head>
   <body>
-    {{ content }}
-
+    <div class="container">
+      {{ content }}
+    </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!-- Vegas Background -->
+    <script type="text/javascript" src="/js/jquery.vegas.min.js"></script>
+
+    <!-- Owl Carousel -->
+    <script src="/js/owl.carousel.min.js"></script>
+
+    <script type="text/javascript">
+
+      var delay = 3000;
+
+      var gallery = []
+
+      for (i = 1; i <=22; i ++) {
+        gallery.push({ src:'/img/gallery/Arantxa-Gallery-'+i+'.jpg', fade: 1000 });
+      }
+
+        $(function(){
+          
+          var itemsInCarousel = 3;
+          // Set Up Carousel
+          var carousel = $('#carousel');
+          for (var i =0; i < gallery.length; i++ ) {
+            carousel.append('<div class="item"><img class="lazyOwl" data-src="'+gallery[i].src+'"></div>');
+          }
+          for (var i =0; i < itemsInCarousel-1; i++ ) {
+            carousel.append('<div class="item"><img class="lazyOwl" data-src="'+gallery[i].src+'"></div>');
+          }
+
+          carousel.owlCarousel({
+            autoPlay: delay, //Set AutoPlay
+            items : itemsInCarousel, // 570px / 5 = 110
+            lazyLoad: true
+          });
+
+          //Set Up slideshow
+          $.vegas('slideshow', {
+            delay: delay,
+            backgrounds: gallery
+          })('overlay', {
+            src:'/img/vegas/overlays/01.png'
+          });
+
+          var pauseFrame = false;
+
+          //Events
+          // Custom Navigation Events
+          $(".next").click(function(){
+            carousel.trigger('owl.next');
+            $.vegas('next');
+          })
+          $(".prev").click(function(){
+            carousel.trigger('owl.prev');
+            $.vegas('prev');
+          })
+          $(".play").click(function(){
+            console.log("Jumping to frame "+pauseFrame);
+            carousel.trigger('owl.play',delay); //owl.play event accept autoPlay speed as second parameter
+            if (pauseFrame) {
+              carousel.data('owlCarousel').goTo(pauseFrame+1); //owl.play event accept autoPlay speed as second parameter
+              pauseFrame = false;
+            }
+            $.vegas('slideshow');
+          })
+          $(".pause").click(function(){
+            carousel.trigger('owl.stop');
+            $.vegas('pause');
+            pauseFrame = false;
+          })
+
+          $('.owl-item').on('click', function(event){
+            var $this = $(this);
+            pauseFrame = $this.index() % gallery.length;
+            carousel.trigger('owl.stop');
+            carousel.data('owlCarousel').goTo(pauseFrame); //owl.play event accept autoPlay speed as second parameter
+            $.vegas('jump', pauseFrame);
+            $.vegas('pause');
+          });
+
+
+        });
+
+    </script>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
   </body>
 </html>

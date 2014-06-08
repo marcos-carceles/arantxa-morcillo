@@ -1,20 +1,30 @@
 ---
-layout: default
+layout: bootstrap
 ---
-
-<div class="home">
-
-  <h1>Posts</h1>
-
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+<header id="arantxa-logo">
+	<h1>Arantxa Morcillo</h1>
+	<img src="/img/arantxa-morcillo-440x50.jpg" alt="Arantxa Morcillo">
+</header>
+<div class="row">
+<div class="col-xs-9 pull-right">
+	{% include accordion.html %}
+</div>
+</div>
+<div class="row">
+	<div class="col-xs-10 col-md-6 pull-right">
+		<a class="prev left carousel-control" href="#myCarousel" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<div id="carousel">
+		</div>
+		<a class="next right carousel-control" href="#myCarousel" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+		<div class="play-controls pause">
+			<span class="glyphicon glyphicon-pause"></span>
+		</div>
+		<div class="play-controls play">
+			<span class="glyphicon glyphicon-play"></span>
+		</div>
+	</div>
 </div>
