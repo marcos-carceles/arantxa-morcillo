@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  {{ partial "head.html" . }}
+  <link rel="stylesheet" href="{{ "css/gallery.css" | absURL }}">
+  <link rel="stylesheet" href="{{ "css/arantxa/arantxa-layout.css" | absURL }}">
+</head>
+<body>
+  <div id="all">
+      <div class="container-fluid">
+          <div class="row row-offcanvas row-offcanvas-left">
+              {{ partial "sidebar.html" . }}
+              {{ block "main" . }}
+              {{ end }}
+          </div>
+      </div>
+  </div>
+  {{ partial "scripts.html" . }}
+  <script>
+    initPhotoSwipeFromDOM('.gallery');
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+/* Layout Portfolio pages BEGIN */
+
+.content-column-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Layout Portfolio pages END */
+
+/* Style Gallery BEGIN */
+.gallery {
+}
+.gallery .carousel {
+  width: 100%;
+}
+.gallery .title {
+  clear: both;
+}
+/* Style Gallery END */

@@ -1,3 +1,53 @@
 languageCode = "en-us"
-title = "My New Hugo Site"
-baseurl = "http://example.org/"
+title = "Arantxa Morcillo"
+baseurl = "http://www.arantxamorcillo.com/"
+theme = "hugo-creative-portfolio-theme"
+disqusShortname = "marcoscarceles"
+googleAnalytics = "UA-55581628-1"
+
+[params]
+  # Style options: default (pink), blue, green, pink, red, sea, violet
+  # Use custom.css for your custom styling
+  style = "default"
+  description = "Arantxa Morchillo fashion designer profile website"
+  copyright = "&copy;2016 Arantxa Morcillo"
+  sidebarAbout = [
+    "I'm not telling you it's going to be easy.",
+    "I'm telling you it's going to be worth it."
+  ]
+  # Contact page
+     # Since this template is static, the contact form uses www.formspree.io as a
+     # proxy. The form makes a POST request to their servers to send the actual
+     # email. Visitors can send up to a 1000 emails each month for free.
+     #
+     # What you need to do for the setup?
+     #
+     # - set your email address under 'email' below
+     # - upload the generated site to your server
+     # - send a dummy email yourself to confirm your account
+     # - click the confirm link in the email from www.formspree.io
+     # - you're done. Happy mailing!
+  email = "contact@arantxamorcillo.com"
+
+  # Nav links in the side bar
+  [[params.navlinks]]
+  name = "Home"
+  url = ""
+
+  [[params.navlinks]]
+  name = "About"
+  url = "about/"
+
+  [[params.navlinks]]
+  name = "Press Release"
+  url = "press/"
+
+  [params.social]
+  facebook      = "https://www.facebook.com/arantxamorcillodesigner"
+  email         = "contact@arantxamorcillo.com"
+  twitter       = "https://twitter.com/arantxafashion"
+  linkedin      = "https://uk.linkedin.com/in/arantxa-morcillo-martin-8640322b"
+  instagram     = "https://www.instagram.com/arantxamorcillo/"
+  googleplus    = "full profile url in googleplus"
+  stackoverflow = "full profile url in stackoverflow"
+  github        = "full profile url in github"
