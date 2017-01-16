@@ -1,3 +1,19 @@
+<style>
+.gallery figure {
+  height: {{ .Site.Params.Gallery.height }}px;
+}
+.gallery .title {
+  color: white;
+  background-color: #333;
+  padding: 0 0 0 1em;
+}
+.gallery img {
+  height: 100%;
+  width: auto;
+}
+.gallery figcaption { display: none; }
+span[itemprop="copyrightHolder"] { color : #888; float: right; }
+span[itemprop="copyrightHolder"]:before { content: "Foto: "; }</style>
 <link rel="stylesheet" href="/css/photoswipe.css">
 <link rel="stylesheet" href="/css/default-skin/default-skin.css">
 <script src="/js/photoswipe.js"></script>
@@ -31,11 +47,11 @@
 
                 <!--  Controls are self-explanatory. Order can be changed. -->
 
-                <div class="pswp__counter"></div>
+                <div class="pswp__counter" style="display:none"></div>
 
                 <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 
-                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
 
                 <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
 

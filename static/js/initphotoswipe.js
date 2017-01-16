@@ -3,12 +3,13 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
     // parse slide data (url, title, size ...) from DOM elements
     // (children of gallerySelector)
     var parseThumbnailElements = function(el) {
-        var thumbElements = el.childNodes,
+        var thumbElements = $(el).find('.owl-item figure').get(),
             numNodes = thumbElements.length,
             items = [],
             figureEl,
             linkEl,
-            size,
+            width,
+            height,
             item;
 
         for(var i = 0; i < numNodes; i++) {
@@ -22,13 +23,14 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
             linkEl = figureEl.children[0]; // <a> element
 
-            size = linkEl.getAttribute('data-size').split('x');
+            width = linkEl.getAttribute('data-width');
+            height = linkEl.getAttribute('data-height');
 
             // create slide object
             item = {
                 src: linkEl.getAttribute('href'),
-                w: parseInt(size[0], 10),
-                h: parseInt(size[1], 10)
+                w: width,
+                h: height
             };
 
 
@@ -73,8 +75,8 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
         // find index of clicked item by looping through all child nodes
         // alternatively, you may define index via data- attribute
-        var clickedGallery = clickedListItem.parentNode,
-            childNodes = clickedListItem.parentNode.childNodes,
+        var clickedGallery = $(clickedListItem).closest('.gallery')[0],
+            childNodes = $(clickedGallery).find('figure'),
             numChildNodes = childNodes.length,
             nodeIndex = 0,
             index;

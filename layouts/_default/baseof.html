@@ -2,7 +2,6 @@
 <html lang="{{ .Site.LanguageCode }}">
 <head>
   {{ partial "head.html" . }}
-  <link rel="stylesheet" href="{{ "css/gallery.css" | absURL }}">
   <link rel="stylesheet" href="{{ "css/arantxa/arantxa-layout.css" | absURL }}">
 </head>
 <body>
@@ -17,10 +16,16 @@
   </div>
   {{ partial "scripts.html" . }}
   <script>
-    initPhotoSwipeFromDOM('.gallery');
-    // $(document).ready(function() {
-    //   $('.carousel').owlCarousel()
-    // })
+    $(document).ready(function() {
+      $('.owl-carousel').owlCarousel({
+        margin:10,
+        loop:true,
+        autoWidth:true,
+        onInitialized: function() {
+          initPhotoSwipeFromDOM('.gallery');
+        }
+      })
+    })
   </script>
 </body>
 </html>
