@@ -1,4 +1,4 @@
-<p class="social">
+<div class="social">
   {{ with .Site.Params.social.facebook }}
   <a href="{{ . }}" data-animate-hover="pulse" class="external facebook">
     <i class="fa fa-facebook"></i>
@@ -19,14 +19,14 @@
     <i class="fa fa-pinterest"></i>
   </a>
   {{end}}
-  {{ with .Site.Params.social.email }}
-  <a href="mailto:{{ . }}" data-animate-hover="pulse" class="email">
-    <i class="fa fa-envelope"></i>
-  </a>
-  {{end}}
   {{ with .Site.Params.social.linkedin }}
   <a href="{{ . }}" data-animate-hover="pulse">
     <i class="fa fa-linkedin"></i>
   </a>
   {{end}}
-</p>
+  {{ with .Site.Params.social.email }}
+  <a href="mailto:{{ . }}" data-animate-hover="pulse" class="email">
+    <i class="fa fa-envelope"></i>
+  </a>
+  {{end}}
+</div>

@@ -585,10 +585,10 @@ SOCIAL LINKS
 .contact-form {
   margin-bottom: 20px;
 }
-p.social {
+.social {
   margin-top: 20px;
 }
-p.social a {
+.social a {
   margin: 0 10px 10px 0;
   color: #fff;
   display: inline-block;
@@ -613,49 +613,49 @@ p.social a {
              &.link {background-color: #871AFF; border-color: #871AFF;}
              */
 }
-p.social a:hover {
+.social a:hover {
   color: #9055a2;
   border-color: #9055a2;
 }
-p.social a i {
+.social a i {
   vertical-align: bottom;
   line-height: 40px;
 }
-p.social.social--outline a {
+.social.social--outline a {
   background: transparent;
 }
-p.social.social--outline a.facebook {
+.social.social--outline a.facebook {
   color: #4460ae;
   border-color: #4460ae;
 }
-p.social.social--outline a.gplus {
+.social.social--outline a.gplus {
   color: #c21f25;
   border-color: #c21f25;
 }
-p.social.social--outline a.twitter {
+.social.social--outline a.twitter {
   color: #3cf;
   border-color: #3cf;
 }
-p.social.social--outline a.instagram {
+.social.social--outline a.instagram {
   color: #cd4378;
   border-color: #cd4378;
 }
-p.social.social--outline a.email {
+.social.social--outline a.email {
   color: #4a7f45;
   border-color: #4a7f45;
 }
-p.social.social--outline a.link {
+.social.social--outline a.link {
   color: #871AFF;
   border-color: #871AFF;
 }
-p.social.social--big a {
+.social.social--big a {
   width: 60px;
   height: 60px;
   border-radius: 30px;
   line-height: 60px;
   font-size: 25px;
 }
-p.social.social--big i {
+.social.social--big i {
   line-height: 60px;
 }
 /*

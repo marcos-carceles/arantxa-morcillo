@@ -1,15 +1,13 @@
 +++
-image = "img/portfolio/splintered/splintered-gallery-01.jpg"
 draft = false
 date = "2017-01-15T20:20:06+01:00"
-title = "Splintered"
+title = "SS/15 Splintered"
+image = "/img/portfolio/splintered/splintered-gallery-01.jpg"
+
 showonlyimage = false
+weight = 4
 
-weight = 1
-
-galleryprefix = ""
 galleryfolder = "img/portfolio/splintered"
-gallerythumbnail = ""
 +++
 
 Text above the more tag will appear on both the card and as the page first paragraph.
@@ -27,22 +25,6 @@ Text above the more tag will appear on both the card and as the page first parag
   {{% galleryimage file="splintered-gallery-05.jpg" width="683" height="1024" caption="Splintered 5" copyrightHolder="Arantxa Morcillo" %}}
 
 {{< /gallery >}}
-
-Esto es un subtitulo
---------------------
-
-{{< tweet 666616452582129664 >}}
-
-{{< instagram BOsJ3J8AD_l >}}
-
-
-* Esto
-* Es
-* Una lista
-
-**Esto es importante**
-
-{{< vimeo 157128407 >}}
 
 
 *Esto tambien*

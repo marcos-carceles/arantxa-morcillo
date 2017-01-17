@@ -1,6 +1,11 @@
 <div id="sidebar" class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
   <div class="sidebar-content">
-    <h1 class="sidebar-heading"><a href="/">{{ .Site.Title }}</a></h1>
+    <header>
+      <a href="/">
+        <h1 class="sidebar-heading hidden">{{ .Site.Title }}</h1>
+        <img src="{{ "/img/arantxa-morcillo-440x50.png" }}" class="img-responsive" alt="Arantxa Morcillo">
+      </a>
+    </header>
     {{ range .Site.Params.sidebarAbout }}
       <p class="sidebar-p">{{ . | safeHTML }}</p>
     {{ end }}
@@ -17,6 +22,8 @@
         {{ with .Site.Params.copyright }}
           {{ . | safeHTML }}
         {{ end }}
+      </p>
+      <p class="credit">
         {{ partial "attribution.html" . }}
       </p>
     </div>

@@ -39,12 +39,16 @@ googleAnalytics = "UA-55581628-1"
   url = ""
 
   [[params.navlinks]]
-  name = "About"
-  url = "about/"
+  name = "The Designer"
+  url = "the-designer/"
 
   [[params.navlinks]]
-  name = "Press Release"
-  url = "press/"
+  name = "Portfolio (Print)"
+  url = "portfolio-print/"
+
+  [[params.navlinks]]
+  name = "Contact"
+  url = "contact/"
 
   [params.social]
   facebook      = "https://www.facebook.com/arantxamorcillodesigner"
