@@ -10,9 +10,11 @@ weight = 2
 galleryfolder = "img/portfolio/road-to-fashion"
 +++
 
-<!-- <a data-pin-do="embedPin" href="https://uk.pinterest.com/pin/456130268490635745/"></a> -->
+The colours of the earth, the humongous immensity of the Atacama desert, the cult of pagan saints, *"Paja brava"*  -a grass that grows in the heights of the andean mountains, where very few living creatures dare to live-.
 
-From El Bolsón to Chuquicamata
+<!--more-->
+
+After a year of exploration of the old *New World*, the artist returns with her most captivating collection yet. Part of the thematic series **"Road To Fashion"**, **"From El Bolsón to Chuquicamata"** captures the raw nature and living of the rural South American continent. In an ode to a different life soil, soul and survival are the elements combined to express the designers view of a different culture.
 
 <!--more-->
 
@@ -25,7 +27,6 @@ From El Bolsón to Chuquicamata
   {{% galleryimage file="6.jpg" width="929" height="1394" caption="Pon algo aqui" %}}
 
 {{< /gallery >}}
-
 
 As presented on <a href="http://www.oxfordfashionstudio.com/previous-shows/london-aw16/">Oxford Fashion Studio LONDON // AW16</a>
 
